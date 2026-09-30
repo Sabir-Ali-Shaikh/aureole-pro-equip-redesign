@@ -1,50 +1,49 @@
-/*
-  ============================================================
-  AUREOLE DESIGN TOKENS
-  ============================================================
-  Update brand colors here. Components should never need their
-  individual color classes rewritten when the brand palette changes.
-*/
-
+/* Aureole Pharmatech v3 design tokens */
 :root {
-  /* Existing Aureole cyan / blue direction */
-  --brand-primary: #08a6d5;
-  --brand-hover: #078fba;
-  --brand-dark: #087fa8;
-  --brand-soft: #eaf9fd;
+  --aureole-blue: #0079ac;
+  --aureole-cyan: #00a6d6;
+  --aureole-deep: #003366;
+  --aureole-slate: #001529;
+  --aureole-soft: #f8fafc;
+  --aureole-pearl: #f1f5f9;
+  --aureole-primary: #1d69b0;
+  --aureole-accent: #01c2fb;
+  --aureole-surface: #f0f7fd;
 
-  /* Neutral system */
+  --brand-primary: var(--aureole-primary);
+  --brand-hover: var(--aureole-blue);
+  --brand-dark: var(--aureole-deep);
+  --brand-accent: var(--aureole-accent);
+  --brand-soft: var(--aureole-surface);
+
   --surface: #ffffff;
-  --surface-alt: #f5f9fb;
-  --foreground: #10212b;
-  --muted: #687983;
-  --border: #dce7eb;
+  --surface-alt: var(--aureole-soft);
+  --foreground: var(--aureole-slate);
+  --muted: #5c6d7e;
+  --border: #dbe5ee;
 
-  /* State */
   --success: #278361;
   --warning: #c88a22;
   --danger: #c94b4b;
 
-  /* Shape */
-  --radius-sm: 0.625rem;
-  --radius-md: 0.875rem;
-  --radius-lg: 1.25rem;
-  --radius-xl: 2rem;
+  --font-family-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-family-heading: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-family-display: "Bebas Neue", Impact, sans-serif;
+  --font-family-accent: "Questrial", ui-sans-serif, system-ui, sans-serif;
 
-  /* Layout */
-  --container: 1280px;
+  --radius-button: 10px;
+  --radius-standard: 12px;
+  --radius-card: 24px;
+
+  --container: 2200px;
+  --page-gutter: 2rem;
 }
 
-/* Optional alternate palette. No component changes required. */
 html[data-theme="dark-brand"] {
-  --brand-primary: #16b8e6;
-  --brand-hover: #12a1ca;
-  --brand-dark: #061f2b;
-  --brand-soft: #0b2b38;
-
-  --surface: #07171f;
-  --surface-alt: #0a1e28;
-  --foreground: #eef9fc;
-  --muted: #9bb0ba;
-  --border: #193743;
+  --surface: #061421;
+  --surface-alt: #0a1c2b;
+  --foreground: #f3f8fb;
+  --muted: #a8b8c5;
+  --border: #1b3850;
+  --brand-soft: #0c2f49;
 }

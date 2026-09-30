@@ -2,141 +2,179 @@
 @import "./theme.css";
 
 @theme inline {
+  --color-aureole-blue: var(--aureole-blue);
+  --color-aureole-cyan: var(--aureole-cyan);
+  --color-aureole-deep: var(--aureole-deep);
+  --color-aureole-slate: var(--aureole-slate);
+  --color-aureole-soft: var(--aureole-soft);
+  --color-aureole-pearl: var(--aureole-pearl);
+  --color-aureole-primary: var(--aureole-primary);
+  --color-aureole-accent: var(--aureole-accent);
+  --color-aureole-surface: var(--aureole-surface);
+
   --color-brand: var(--brand-primary);
   --color-brand-hover: var(--brand-hover);
   --color-brand-dark: var(--brand-dark);
+  --color-brand-accent: var(--brand-accent);
   --color-brand-soft: var(--brand-soft);
-
   --color-surface: var(--surface);
   --color-surface-alt: var(--surface-alt);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-border: var(--border);
-
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-danger: var(--danger);
+
+  --font-sans: var(--font-family-body);
+  --font-heading: var(--font-family-heading);
+  --font-display: var(--font-family-display);
+  --font-accent: var(--font-family-accent);
+
+  --breakpoint-xs: 475px;
+  --breakpoint-3xl: 1920px;
+  --breakpoint-4xl: 2560px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   min-width: 320px;
   background: var(--surface);
   color: var(--foreground);
-  font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: var(--font-family-body);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-family-heading); }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+::selection { background: var(--aureole-cyan); color: #fff; }
+
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("/grain.svg");
+  background-repeat: repeat;
+  opacity: 0.02;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.wave-bg {
+  background-image: linear-gradient(135deg, color-mix(in srgb, var(--aureole-surface) 88%, transparent), transparent), url("/wavebg.webp");
+  background-size: cover;
+  background-position: center;
 }
 
-button {
-  font: inherit;
+.bg-brand-gradient { background-image: linear-gradient(90deg, var(--aureole-accent), var(--aureole-primary)); }
+.text-brand-gradient {
+  background-image: linear-gradient(90deg, var(--aureole-accent), var(--aureole-primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.font-heading { font-family: var(--font-family-heading); }
+.font-display { font-family: var(--font-family-display); }
+.font-accent { font-family: var(--font-family-accent); }
+
+.lazy-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1000px;
+}
+.lazy-image {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 400px;
 }
 
-::selection {
-  background: var(--brand-primary);
-  color: white;
+@keyframes aureole-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes aureole-pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .62; }
+}
+@keyframes aureole-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes aureole-marquee-reverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+@keyframes aureole-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.animate-float { animation: aureole-float 6s ease-in-out infinite; }
+.animate-pulse-slow { animation: aureole-pulse-slow 4s ease-in-out infinite; }
+.animate-marquee { animation: aureole-marquee 28s linear infinite; }
+.animate-marquee-reverse { animation: aureole-marquee-reverse 28s linear infinite; }
+.animate-shimmer {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: aureole-shimmer 1.7s linear infinite;
 }
 
 @layer components {
   .container-shell {
-    width: min(calc(100% - 2rem), var(--container));
+    width: min(calc(100% - (var(--page-gutter) * 2)), var(--container));
     margin-inline: auto;
   }
-
   .eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    color: var(--brand-primary);
-    font-size: 0.75rem;
+    gap: .5rem;
+    color: var(--aureole-cyan);
+    font-size: .75rem;
     font-weight: 800;
-    letter-spacing: 0.16em;
+    letter-spacing: .16em;
+    text-transform: uppercase;
   }
+  .type-display { font-family: var(--font-family-heading); font-size: 4.5rem; line-height: .96; letter-spacing: -.045em; }
+  .type-title { font-family: var(--font-family-heading); font-size: 3rem; line-height: 1.02; letter-spacing: -.035em; }
+  .type-heading { font-family: var(--font-family-heading); font-size: 1.875rem; line-height: 1.12; letter-spacing: -.025em; }
+  .type-subtitle { font-family: var(--font-family-heading); font-size: 1.25rem; line-height: 1.35; }
+  .type-body { font-size: 1rem; line-height: 1.75; }
+  .type-meta { font-size: .75rem; line-height: 1.4; letter-spacing: .12em; text-transform: uppercase; }
 
-  .btn-primary {
+  .btn-primary, .btn-secondary {
     display: inline-flex;
     min-height: 2.875rem;
     align-items: center;
     justify-content: center;
-    border-radius: var(--radius-md);
-    background: var(--brand-primary);
+    border-radius: var(--radius-button);
     padding-inline: 1.25rem;
-    color: white;
-    font-size: 0.875rem;
+    font-size: .875rem;
     font-weight: 750;
-    transition:
-      background-color 180ms ease,
-      transform 180ms ease,
-      box-shadow 180ms ease;
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
   }
-
-  .btn-primary:hover {
-    background: var(--brand-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 12px 32px color-mix(in srgb, var(--brand-primary) 20%, transparent);
-  }
-
-  .btn-primary:focus-visible,
-  .btn-secondary:focus-visible,
-  button:focus-visible,
-  a:focus-visible {
-    outline: 3px solid color-mix(in srgb, var(--brand-primary) 35%, transparent);
+  .btn-primary { background: var(--aureole-primary); color: #fff; }
+  .btn-primary:hover { background: var(--aureole-blue); transform: translateY(-1px); box-shadow: 0 12px 32px color-mix(in srgb, var(--aureole-primary) 20%, transparent); }
+  .btn-secondary { border: 1px solid var(--border); background: var(--surface); color: var(--foreground); }
+  .btn-secondary:hover { border-color: var(--aureole-cyan); background: var(--aureole-surface); color: var(--aureole-blue); transform: translateY(-1px); }
+  .btn-primary:focus-visible, .btn-secondary:focus-visible, button:focus-visible, a:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--aureole-cyan) 35%, transparent);
     outline-offset: 3px;
-  }
-
-  .btn-secondary {
-    display: inline-flex;
-    min-height: 2.875rem;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    background: var(--surface);
-    padding-inline: 1.25rem;
-    color: var(--foreground);
-    font-size: 0.875rem;
-    font-weight: 750;
-    transition:
-      border-color 180ms ease,
-      color 180ms ease,
-      transform 180ms ease,
-      background-color 180ms ease;
-  }
-
-  .btn-secondary:hover {
-    border-color: var(--brand-primary);
-    background: var(--brand-soft);
-    color: var(--brand-primary);
-    transform: translateY(-1px);
   }
 }
 
+@media (max-width: 639px) {
+  :root { --page-gutter: 1rem; }
+  .type-display { font-size: 3rem; }
+  .type-title { font-size: 2.35rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
+    animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: .01ms !important;
   }
 }
