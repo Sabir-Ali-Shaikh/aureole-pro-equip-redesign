@@ -32,7 +32,7 @@ export default function FinalCTA() {
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
-                  to="/contact"
+                  to="/contact#quote"
                   className="inline-flex min-h-12 items-center justify-center rounded-[var(--radius-button)] bg-white px-5 font-bold text-aureole-deep transition hover:bg-aureole-soft hover:text-aureole-blue"
                 >
                   Request a Quote
