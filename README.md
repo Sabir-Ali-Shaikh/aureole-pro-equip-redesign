@@ -54,24 +54,34 @@ This keeps global values out of components.
 - `components/` reusable UI/layout/navigation
 - `pages/` route-level screens
 - `features/` domain modules as the project grows
-- `data/` data-driven product/industry content
+- `data/` data-driven product/industry/company content
+- `services/` external form/API integrations
 - `config/` site-wide configuration
 - `styles/` tokens/global styling
 - `assets/` local images/logos/icons
 
+## Quote form endpoint
+
+The Contact page works with a configurable multipart form endpoint.
+
+Copy `.env.example` to `.env` and set:
+
+```bash
+VITE_QUOTE_ENDPOINT=https://your-api.example.com/quotes
+```
+
+The endpoint should accept `multipart/form-data` POST requests. If no endpoint is configured, the form falls back to opening the visitor's email client with the enquiry details prefilled. Attachments cannot be transferred through the email fallback and must be attached manually.
+
 ## Implemented
 
-- theme-token system
-- top contact bar
-- responsive desktop navbar
-- products dropdown
-- animated mobile navigation drawer
-- responsive hero section
-- official Aureole logo reference
-- official Aureole equipment image reference
-- trust/statistics strip
+- Aureole v3 design-token system
+- responsive navigation and full footer
+- animated homepage and product carousel
+- capabilities, industries and manufacturing storytelling
+- client/trust and company sections
+- full About page
+- filterable Products page
+- reusable production-ready product-detail system
+- Contact / Request Quote experience with validation and optional URS upload
+- product-to-contact preselection
 - reduced-motion support
-
-## Next stage
-
-Build featured products and the reusable product-card/data architecture, followed by capabilities and industries.
