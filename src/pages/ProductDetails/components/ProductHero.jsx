@@ -9,6 +9,7 @@ export default function ProductHero({ product, details }) {
   const categoryLabel =
     productCategories.find((category) => category.id === product.category)?.label ?? "Equipment";
   const highlights = details.specifications?.slice(0, 3) ?? [];
+  const quoteLink = `/contact?product=${encodeURIComponent(product.slug)}#quote`;
 
   return (
     <section className="relative isolate overflow-hidden border-b border-border bg-aureole-soft">
@@ -44,7 +45,7 @@ export default function ProductHero({ product, details }) {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/contact" className="btn-primary group">
+            <Link to={quoteLink} className="btn-primary group">
               Request a Quote
               <ArrowRight size={17} className="ml-2 transition-transform group-hover:translate-x-1" />
             </Link>

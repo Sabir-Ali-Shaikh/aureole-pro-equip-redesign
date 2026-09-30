@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { siteConfig } from "../../../config/site";
 
 export default function ProductCTA({ product }) {
+  const quoteLink = `/contact?product=${encodeURIComponent(product.slug)}#quote`;
+
   return (
     <section className="lazy-section bg-surface py-16 sm:py-20">
       <div className="container-shell">
@@ -22,7 +24,7 @@ export default function ProductCTA({ product }) {
                 Share your required capacity, process conditions and automation expectations with the Aureole engineering team.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <Link to="/contact" className="inline-flex min-h-12 items-center justify-center rounded-[var(--radius-button)] bg-white px-5 font-bold text-aureole-deep transition hover:bg-aureole-soft hover:text-aureole-blue">
+                <Link to={quoteLink} className="inline-flex min-h-12 items-center justify-center rounded-[var(--radius-button)] bg-white px-5 font-bold text-aureole-deep transition hover:bg-aureole-soft hover:text-aureole-blue">
                   Request a Quote
                   <ArrowRight size={18} className="ml-2" />
                 </Link>
