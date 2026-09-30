@@ -4,6 +4,10 @@ import FeaturedProducts from "./components/FeaturedProducts";
 import CapabilitiesSection from "./components/CapabilitiesSection";
 import IndustriesSection from "./components/IndustriesSection";
 import ManufacturingSection from "./components/ManufacturingSection";
+import ClientsSection from "./components/ClientsSection";
+import AboutSection from "./components/AboutSection";
+import DirectorSection from "./components/DirectorSection";
+import FinalCTA from "./components/FinalCTA";
 
 export default function HomePage() {
   return (
@@ -14,6 +18,10 @@ export default function HomePage() {
       <CapabilitiesSection />
       <IndustriesSection />
       <ManufacturingSection />
+      <ClientsSection />
+      <AboutSection />
+      <DirectorSection />
+      <FinalCTA />
     </>
   );
 }
