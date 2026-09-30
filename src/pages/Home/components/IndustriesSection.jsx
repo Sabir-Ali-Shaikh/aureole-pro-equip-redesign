@@ -31,6 +31,7 @@ export default function IndustriesSection() {
                     type="button"
                     onClick={() => setActiveId(industry.id)}
                     onMouseEnter={() => setActiveId(industry.id)}
+                    onFocus={() => setActiveId(industry.id)}
                     aria-pressed={active}
                     className={`group flex w-full items-center gap-5 border-b border-border py-4 text-left transition-colors ${
                       active
@@ -96,7 +97,7 @@ export default function IndustriesSection() {
                   <h3 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
                     {activeIndustry.name}
                   </h3>
-                  <p className="type-body mt-4 max-w-xl text-white/72">
+                  <p className="type-body mt-4 max-w-xl text-white/70">
                     {activeIndustry.description}
                   </p>
                 </div>
