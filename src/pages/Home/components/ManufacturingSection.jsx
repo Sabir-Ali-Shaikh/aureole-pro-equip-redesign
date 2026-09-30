@@ -102,13 +102,13 @@ export default function ManufacturingSection() {
 
         <div className="mt-24 lg:mt-32">
           <div className="relative">
-            <div className="absolute left-0 right-0 top-[31px] hidden h-px bg-white/16 md:block" />
+            <div className="absolute left-0 right-0 top-[31px] hidden h-px bg-white/15 md:block" />
             <motion.div
               style={{ scaleX: shouldReduceMotion ? 1 : lineScale, transformOrigin: "left" }}
               className="absolute left-0 right-0 top-[31px] hidden h-px bg-brand-gradient md:block"
             />
 
-            <div className="grid gap-0 border-t border-white/16 md:grid-cols-4 md:border-t-0">
+            <div className="grid gap-0 border-t border-white/15 md:grid-cols-4 md:border-t-0">
               {processSteps.map((step, index) => (
                 <motion.div
                   key={step.number}
@@ -116,7 +116,7 @@ export default function ManufacturingSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.45, delay: index * 0.08 }}
-                  className="relative border-b border-white/16 py-6 md:border-b-0 md:border-r md:px-6 md:py-0 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
+                  className="relative border-b border-white/15 py-6 md:border-b-0 md:border-r md:px-6 md:py-0 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
                 >
                   <div className="relative z-10 flex items-center gap-4 md:block">
                     <span className="grid size-16 shrink-0 place-items-center rounded-full border border-aureole-accent/45 bg-aureole-slate/80 font-display text-2xl tracking-wider text-aureole-accent backdrop-blur">
@@ -124,7 +124,7 @@ export default function ManufacturingSection() {
                     </span>
                     <div className="md:mt-7">
                       <h3 className="text-xl font-bold text-white">{step.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-white/58">{step.detail}</p>
+                      <p className="mt-2 text-sm leading-6 text-white/60">{step.detail}</p>
                     </div>
                   </div>
                 </motion.div>
