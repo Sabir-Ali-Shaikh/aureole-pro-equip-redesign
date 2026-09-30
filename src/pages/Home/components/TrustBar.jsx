@@ -9,7 +9,7 @@ const stats = [
 
 export default function TrustBar() {
   return (
-    <section className="border-y border-border bg-surface-alt" aria-label="Company statistics">
+    <section className="lazy-section border-y border-border bg-aureole-pearl" aria-label="Company statistics">
       <div className="container-shell grid grid-cols-2 md:grid-cols-4">
         {stats.map((stat, index) => (
           <motion.div
@@ -23,8 +23,8 @@ export default function TrustBar() {
             {index !== 0 && (
               <span className="absolute left-0 top-1/2 hidden h-12 w-px -translate-y-1/2 bg-border md:block" />
             )}
-            <p className="text-2xl font-bold tracking-tight text-brand sm:text-3xl">{stat.value}</p>
-            <p className="mt-1.5 text-xs font-semibold uppercase tracking-[0.1em] text-muted sm:text-sm">
+            <p className="font-display text-5xl leading-none tracking-wide text-aureole-primary">{stat.value}</p>
+            <p className="mt-2 text-xs font-bold uppercase tracking-[0.12em] text-muted">
               {stat.label}
             </p>
           </motion.div>
