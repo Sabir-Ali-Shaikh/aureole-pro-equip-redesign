@@ -4,11 +4,15 @@ const ALLOWED_FILE_TYPES = [
   "application/msword",
   "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
 ];
+const ALLOWED_FILE_EXTENSION = /\.(pdf|doc|docx)$/i;
 
 export function validateAttachment(file) {
   if (!file) return null;
 
-  if (!ALLOWED_FILE_TYPES.includes(file.type)) {
+  const hasAllowedType = ALLOWED_FILE_TYPES.includes(file.type);
+  const hasAllowedExtension = ALLOWED_FILE_EXTENSION.test(file.name);
+
+  if (!hasAllowedType && !hasAllowedExtension) {
     return "Upload a PDF, DOC or DOCX file.";
   }
 
