@@ -2,6 +2,8 @@ import HeroSection from "./components/HeroSection";
 import TrustBar from "./components/TrustBar";
 import FeaturedProducts from "./components/FeaturedProducts";
 import CapabilitiesSection from "./components/CapabilitiesSection";
+import IndustriesSection from "./components/IndustriesSection";
+import ManufacturingSection from "./components/ManufacturingSection";
 
 export default function HomePage() {
   return (
@@ -10,6 +12,8 @@ export default function HomePage() {
       <TrustBar />
       <FeaturedProducts />
       <CapabilitiesSection />
+      <IndustriesSection />
+      <ManufacturingSection />
     </>
   );
 }
