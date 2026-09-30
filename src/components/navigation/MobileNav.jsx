@@ -113,7 +113,7 @@ export default function MobileNav({ open, onClose }) {
             </nav>
 
             <div className="border-t border-border p-5">
-              <Link to="/contact" className="btn-primary w-full" onClick={onClose}>
+              <Link to="/contact#quote" className="btn-primary w-full" onClick={onClose}>
                 Request a Quote
               </Link>
             </div>
