@@ -22,7 +22,7 @@ export default function ProductCard({ product, index = 0 }) {
               {product.eyebrow}
             </span>
             <span className="grid size-10 place-items-center rounded-[10px] bg-surface text-aureole-slate shadow-sm transition duration-300 group-hover:bg-aureole-primary group-hover:text-white">
-              <ArrowUpRight size={18} />
+              <ArrowUpRight size={18} aria-hidden="true" />
             </span>
           </div>
 
@@ -30,6 +30,8 @@ export default function ProductCard({ product, index = 0 }) {
             src={product.image}
             alt={product.name}
             loading="lazy"
+            decoding="async"
+            draggable="false"
             className="lazy-image h-full w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.045]"
           />
         </div>
