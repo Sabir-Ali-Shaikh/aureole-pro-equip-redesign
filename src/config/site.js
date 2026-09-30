@@ -17,5 +17,6 @@ export const siteConfig = {
     logo: "https://aureoleproequip.com/images/logo.png",
     heroProduct:
       "https://aureoleproequip.com/images/products/verticle-autoclave-swing.jpg",
+    manufacturing: "https://aureoleproequip.com/images/industry.jpeg",
   },
 };
