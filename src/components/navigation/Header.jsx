@@ -61,7 +61,7 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Link to="/contact" className="btn-primary hidden xl:inline-flex">
+            <Link to="/contact#quote" className="btn-primary hidden xl:inline-flex">
               Request a Quote
               <span className="ml-2" aria-hidden="true">→</span>
             </Link>
