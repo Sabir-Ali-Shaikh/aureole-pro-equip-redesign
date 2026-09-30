@@ -45,17 +45,19 @@ export default function FeaturedProducts() {
               type="button"
               onClick={() => scrollCarousel(-1)}
               aria-label="Previous products"
+              aria-controls="featured-products-carousel"
               className="grid size-11 place-items-center rounded-[10px] border border-border bg-surface text-aureole-slate transition hover:border-aureole-cyan hover:bg-aureole-surface hover:text-aureole-blue"
             >
-              <ArrowLeft size={19} />
+              <ArrowLeft size={19} aria-hidden="true" />
             </button>
             <button
               type="button"
               onClick={() => scrollCarousel(1)}
               aria-label="Next products"
+              aria-controls="featured-products-carousel"
               className="grid size-11 place-items-center rounded-[10px] bg-aureole-primary text-white transition hover:bg-aureole-blue"
             >
-              <ArrowRight size={19} />
+              <ArrowRight size={19} aria-hidden="true" />
             </button>
           </div>
         </div>
@@ -65,9 +67,13 @@ export default function FeaturedProducts() {
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden w-12 bg-gradient-to-l from-aureole-soft to-transparent md:block" />
 
           <div
+            id="featured-products-carousel"
             ref={carouselRef}
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Featured products"
+            tabIndex="0"
             className="-mx-4 flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
-            aria-label="Featured product carousel"
           >
             {showcaseProducts.map((product, index) => (
               <div
@@ -90,7 +96,7 @@ export default function FeaturedProducts() {
             className="inline-flex items-center gap-2 font-bold text-aureole-blue transition hover:gap-3"
           >
             Browse complete equipment range
-            <ArrowRight size={18} />
+            <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </div>
       </div>

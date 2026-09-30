@@ -17,6 +17,15 @@ npm install
 npm run dev
 ```
 
+## Production build
+
+```bash
+npm run build
+npm run preview
+```
+
+Every pull request and push to `main` also runs the GitHub Actions build workflow in `.github/workflows/build.yml`.
+
 ## Brand colors
 
 All site colors are controlled from:
@@ -51,7 +60,7 @@ This keeps global values out of components.
 ## Architecture
 
 - `app/` routing/app setup
-- `components/` reusable UI/layout/navigation
+- `components/` reusable UI/layout/navigation/SEO helpers
 - `pages/` route-level screens
 - `features/` domain modules as the project grows
 - `data/` data-driven product/industry/company content
@@ -60,17 +69,43 @@ This keeps global values out of components.
 - `styles/` tokens/global styling
 - `assets/` local images/logos/icons
 
-## Quote form endpoint
+## Environment variables
 
-The Contact page works with a configurable multipart form endpoint.
+Copy `.env.example` to `.env` for local configuration.
 
-Copy `.env.example` to `.env` and set:
+### Public site URL
+
+Set the final production origin so canonical and Open Graph URLs can be generated correctly:
+
+```bash
+VITE_SITE_URL=https://www.example.com
+```
+
+Do not include a trailing slash.
+
+### Quote form endpoint
+
+The Contact page works with a configurable multipart form endpoint:
 
 ```bash
 VITE_QUOTE_ENDPOINT=https://your-api.example.com/quotes
 ```
 
 The endpoint should accept `multipart/form-data` POST requests. If no endpoint is configured, the form falls back to opening the visitor's email client with the enquiry details prefilled. Attachments cannot be transferred through the email fallback and must be attached manually.
+
+## SEO & accessibility
+
+- route-aware titles and meta descriptions
+- Open Graph and Twitter metadata
+- canonical URLs when `VITE_SITE_URL` is configured
+- Organization JSON-LD
+- `noindex` handling for unknown routes
+- crawler defaults in `public/robots.txt`
+- global hash scrolling and scroll restoration
+- skip-to-content navigation
+- visible keyboard focus states
+- keyboard-focusable featured product carousel
+- reduced-motion support
 
 ## Implemented
 
@@ -84,4 +119,8 @@ The endpoint should accept `multipart/form-data` POST requests. If no endpoint i
 - reusable production-ready product-detail system
 - Contact / Request Quote experience with validation and optional URS upload
 - product-to-contact preselection
+- route-aware SEO and social metadata
+- accessibility and scroll behavior polish
+- branded 404 page
+- GitHub Actions production build validation
 - reduced-motion support

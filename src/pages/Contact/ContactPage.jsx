@@ -1,27 +1,8 @@
-import { useEffect } from "react";
-import { useReducedMotion } from "framer-motion";
-import { useLocation } from "react-router-dom";
 import ContactHero from "./components/ContactHero";
 import QuoteRequestForm from "./components/QuoteRequestForm";
 import ContactSupportPanel from "./components/ContactSupportPanel";
 
 export default function ContactPage() {
-  const location = useLocation();
-  const shouldReduceMotion = useReducedMotion();
-
-  useEffect(() => {
-    if (location.hash !== "#quote") return;
-
-    const frame = window.requestAnimationFrame(() => {
-      document.getElementById("quote")?.scrollIntoView({
-        behavior: shouldReduceMotion ? "auto" : "smooth",
-        block: "start",
-      });
-    });
-
-    return () => window.cancelAnimationFrame(frame);
-  }, [location.hash, shouldReduceMotion]);
-
   return (
     <>
       <ContactHero />
