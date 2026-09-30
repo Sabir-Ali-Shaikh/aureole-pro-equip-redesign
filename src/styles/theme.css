@@ -1,0 +1,50 @@
+/*
+  ============================================================
+  AUREOLE DESIGN TOKENS
+  ============================================================
+  Update brand colors here. Components should never need their
+  individual color classes rewritten when the brand palette changes.
+*/
+
+:root {
+  /* Existing Aureole cyan / blue direction */
+  --brand-primary: #08a6d5;
+  --brand-hover: #078fba;
+  --brand-dark: #087fa8;
+  --brand-soft: #eaf9fd;
+
+  /* Neutral system */
+  --surface: #ffffff;
+  --surface-alt: #f5f9fb;
+  --foreground: #10212b;
+  --muted: #687983;
+  --border: #dce7eb;
+
+  /* State */
+  --success: #278361;
+  --warning: #c88a22;
+  --danger: #c94b4b;
+
+  /* Shape */
+  --radius-sm: 0.625rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 2rem;
+
+  /* Layout */
+  --container: 1280px;
+}
+
+/* Optional alternate palette. No component changes required. */
+html[data-theme="dark-brand"] {
+  --brand-primary: #16b8e6;
+  --brand-hover: #12a1ca;
+  --brand-dark: #061f2b;
+  --brand-soft: #0b2b38;
+
+  --surface: #07171f;
+  --surface-alt: #0a1e28;
+  --foreground: #eef9fc;
+  --muted: #9bb0ba;
+  --border: #193743;
+}
