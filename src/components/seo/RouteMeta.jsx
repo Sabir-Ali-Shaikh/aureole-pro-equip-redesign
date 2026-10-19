@@ -13,6 +13,22 @@ const defaultMeta = {
 function resolveRouteMeta(pathname) {
   if (pathname === "/") return defaultMeta;
 
+  if (pathname === "/events") {
+    return {
+      title: "Events | Aureole Process Equipment",
+      description: "Explore Aureole's PharmaTech Expo exhibition at Nesco and Diwali celebration through our event photo gallery.",
+      image: "https://aureoleproequip.com/images/events/2.jpg",
+    };
+  }
+
+  if (pathname === "/clients") {
+    return {
+      title: "Our Clients | Aureole Process Equipment",
+      description: "Our clients, our pride. Discover the client portfolio of Aureole Process Equipment.",
+      image: siteConfig.assets.manufacturing,
+    };
+  }
+
   if (pathname === "/products") {
     return {
       title: "Products | Aureole Process Equipment",
