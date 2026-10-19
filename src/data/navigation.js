@@ -12,8 +12,8 @@ export const navigation = [
       { label: "View All Products", href: "/products" },
     ],
   },
-  { label: "Industries", href: "/#industries" },
-  { label: "Capabilities", href: "/#capabilities" },
+  { label: "Events", href: "/events" },
+  { label: "Our Clients", href: "/clients" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];

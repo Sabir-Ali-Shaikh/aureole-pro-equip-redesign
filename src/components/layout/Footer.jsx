@@ -12,6 +12,8 @@ const footerProducts = [
 const footerLinks = [
   ["About", "/about"],
   ["Products", "/products"],
+  ["Events", "/events"],
+  ["Our Clients", "/clients"],
   ["Industries", "/#industries"],
   ["Capabilities", "/#capabilities"],
   ["Contact", "/contact"],

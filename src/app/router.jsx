@@ -6,6 +6,8 @@ import ProductDetailsPage from "../pages/ProductDetails/ProductDetailsPage";
 import AboutPage from "../pages/About/AboutPage";
 import ContactPage from "../pages/Contact/ContactPage";
 import NotFoundPage from "../pages/NotFound/NotFoundPage";
+import EventsPage from "../pages/Events/EventsPage";
+import ClientsPage from "../pages/Clients/ClientsPage";
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +18,8 @@ export const router = createBrowserRouter([
       { path: "/products/:slug", element: <ProductDetailsPage /> },
       { path: "/about", element: <AboutPage /> },
       { path: "/contact", element: <ContactPage /> },
+      { path: "/events", element: <EventsPage /> },
+      { path: "/clients", element: <ClientsPage /> },
       { path: "*", element: <NotFoundPage /> },
     ],
   },
