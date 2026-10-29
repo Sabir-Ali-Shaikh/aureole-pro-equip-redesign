@@ -1,9 +1,9 @@
 import { Download, Mail, MapPin, Phone } from "lucide-react";
 import { siteConfig } from "../../config/site";
 
-export default function TopBar() {
+export default function TopBar({ dark = false }) {
   return (
-    <div className="bg-brand-dark text-white">
+    <div className={`text-white ${dark ? "header-topbar-dark" : "bg-brand-dark"}`}>
       <div className="container-shell flex min-h-10 items-center justify-between gap-4 py-2 text-xs sm:text-[13px]">
         <div className="flex min-w-0 items-center gap-5">
           <a
