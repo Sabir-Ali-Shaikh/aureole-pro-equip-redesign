@@ -1,0 +1,24 @@
+.site-header-dark { background: rgba(0,21,41,.95); color: white; box-shadow: 0 1px 0 rgba(255,255,255,.15); }
+.site-header-dark > .container-shell { max-width: 1680px; }
+.header-nav-link { display: flex; align-items: center; height: 100%; padding: 0 15px; font-size: 12px; font-weight: 650; transition: color .2s; }
+.header-nav-link:hover, .header-nav-link.is-active { color: var(--aureole-primary); }
+.site-header-dark .header-nav-link { color: #c0d0dd; }
+.site-header-dark .header-nav-link:hover, .site-header-dark .header-nav-link.is-active { color: var(--aureole-accent); }
+.header-products-toggle { display: grid; place-items: center; width: 28px; height: 44px; margin-left: -12px; cursor: pointer; }
+.header-dropdown { position: absolute; top: calc(100% - 8px); left: 0; width: 290px; padding: 8px; border-radius: var(--radius-standard); border: 1px solid var(--border); background: var(--surface); box-shadow: 0 20px 50px #00152926; color: var(--foreground); }
+.header-dropdown a { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px; font-size: 12px; font-weight: 600; border-radius: 8px; }
+.header-dropdown a:hover, .header-dropdown a:focus-visible { background: var(--aureole-surface); color: var(--aureole-blue); }
+.site-header-dark .header-dropdown { background: var(--aureole-slate); border-color: #ffffff30; color: white; }
+.site-header-dark .header-dropdown a:hover, .site-header-dark .header-dropdown a:focus-visible { background: var(--aureole-deep); color: var(--aureole-accent); }
+.header-quote { min-height: 44px; align-items: center; gap: 28px; padding: 0 18px; background: var(--aureole-primary); color: white; font-size: 12px; font-weight: 700; border-radius: var(--radius-button); }
+.site-header-dark .header-quote { background: transparent; border: 1px solid #ffffff50; color: white; }
+.header-quote:hover { background: var(--aureole-blue); }
+.site-header-dark .header-quote:hover { border-color: var(--aureole-accent); background: var(--aureole-deep); }
+.header-menu { border: 1px solid var(--border); border-radius: var(--radius-button); }
+.site-header-dark .header-menu { border-color: #ffffff40; }
+.header-topbar-dark { background: var(--aureole-slate); border-bottom: 1px solid #ffffff15; }
+.brand-logo-dark { background: white; border-radius: 4px; padding: 3px; }
+.brand-wordmark { font-size: 15px; font-weight: 700; letter-spacing: .12em; color: white; } .brand-wordmark small { display: block; margin-top: 5px; font-size: 7px; letter-spacing: .15em; color: #b5c8d8; }
+.home-mobile-nav { --surface: var(--aureole-slate); --foreground: #fff; --border: #ffffff30; --muted: #b5c8d8; --brand-soft: var(--aureole-deep); color: white; }
+.home-mobile-nav a[aria-current='page'] { color: var(--aureole-accent); }
+
